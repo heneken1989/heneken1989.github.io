@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>no</th>
+            <th>car</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <script>
+        // khai bao 1 array gom 3 phan tu 
+        var cars = new Array(3);
+        // khoi tao gia tri cho array
+        cars[0]= "Mer"
+        cars[1]= "vinfast"
+        cars[2]= "g63"
+        // khai bao 1 array homes goom 3 phan tu
+        var homes = ['apartment','room for rent','dormitory']
+        // duyet vva in ra man hinh cac pohan tu trong mang
+    
+        document.write("thong tin cac loai xe");
+
+        for(var i=0;i<cars.length;i++)
+        {
+            document.write(cars[i] + ";")
+        }
+         
+        //xuat theo dang list
+
+        document.write("<ul>");
+        for(var i=0;i<cars.length;i++)
+        {
+            document.write("<li>" + cars[i] + "</li>");
+        }
+
+        document.write("</ul>");
+
+        // for in
+        
+        document.write("<br> For in:");
+        document.write("<ol>");
+        for(var i in cars){
+            document.write("<li>" + cars[i] + "</li>");
+        }
+        document.write("</ol>");
+              
+    //    for of
+       document.write("<br> For of:");
+        document.write("<ol>");
+        for(var x of cars){
+            document.write("<li>" + x + "</li>");
+        }
+        document.write("</ol>");
+              
+//table
+     document.write( "<table border='1'><tr><th>no</th><th>car</th></tr>");
+        for(var i in cars)
+        {
+            document.write("<tr>");
+            document.write("<td>" + (parseInt(i)+1) +"</td>" );
+            document.write("<td>" + cars[i] + "</td>");
+            document.write("</tr>");
+           
+        }
+     document.write("</table>")
+
+
+    </script>
+</body>
+</html>

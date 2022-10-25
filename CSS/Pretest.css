@@ -1,0 +1,27 @@
+header{
+    background-color: chartreuse;
+    text-align: center;
+    font-size: 60px;
+}
+nav{
+
+    display:flex;
+    background-color:white;
+    justify-content: space-around;
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
+    border:solid black;
+    border-width: 3px 0px 3px 0px;
+}
+nav a{
+    text-decoration: none;
+}
+img{
+    width: 700px;
+    height: 300px;
+    margin-left: 350px;
+}
+footer{
+    text-align: center;
+}

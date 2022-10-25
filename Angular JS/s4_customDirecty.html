@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+
+    <!-- call by element -->
+    <my-custom-directive></my-custom-directive>
+    <!-- call by atrribute -->
+    <div my-custom-directive> </div>
+
+    <div class="my-class-directive" > </div>
+
+    <!-- directive:my-comment-directive -->
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp",[]);
+        app.directive('myCustomDirective',function(){
+            return{
+                retrict:'AE',
+                template:'<h1>This is custom directive call by Attribute or ELement </h1>'
+            }
+        })
+
+        app.directive('myClassDirective', function(){
+            return{
+                restrict: 'C',
+                template: '<h1> This is custom directive call by Class </h1>'
+
+            }
+        })
+
+        app.directive('myCommentDirective', function(){
+            return{
+                restrict: 'M',
+                replace: true,
+                template: '<h1> This is custom directive call by Comment </h1>'
+            }
+            })   
+            
+    </script>
+</body>
+</html>

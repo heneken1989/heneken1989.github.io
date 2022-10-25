@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s7-transition</title>
+    <style>
+      p{
+        background-color: brown;
+        width: 200px;
+        height: 200px;
+      }
+      .dung:hover{
+        transition-duration: 2s;
+        transition-delay: 0s;
+        transition-property: all;
+        transition-timing-function: linear;
+        width: 400px;
+        height: 400px;
+      }
+        div{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+        .tran1:hover{
+        transition-duration: 2s;
+        transition-property:width;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        width: 500px;
+        }
+        .tran2:hover{
+        transition-duration: 2s;
+        transition-property:height;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        height: 500px;
+    }
+        .tran3:hover{
+        transition-duration: 2s;
+        transition-property: all;
+        transition-timing-function: linear;
+        transition-delay: 0s;
+        width: 300px;
+        height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tran1">transition</div>
+    <br>
+    <div class="tran2"> transition</div>
+    <br>
+    <div class="tran3">transition</div>
+
+
+
+
+ <p class="dung">dung kute</p>
+
+</body>
+</html>

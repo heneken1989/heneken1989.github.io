@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp" ng-controller="myController"></body>
+           
+        10000|number={{10000|number}} <br>
+        10000|number:2 ={{10000|number:2}} <br>
+        10000|currency = {{10000|currency}}
+
+        <h1>fillter by date</h1>
+        today|date ={{today|date}};  <br>
+        today|date:'short' = {{today|date:'short'}} <br>
+        today|date:'medium' = {{today|date:'medium'}} <br>
+        today|date:'fulldate' = {{today|date:'fullDate'}} <br>
+
+
+
+        <h1>fillteer by fillter</h1>
+
+        <input type="text" ng-model="search">
+        <input type="button" ng-model="orderBy">
+        <ol >
+            <li ng-repeat="s in studentlist|filter:name|orderBy:name">{{s}}</li> 
+            <li ng-repeat="s in studentlist|filter:search:name">{{s}}</li>
+         </ol>
+         <h1>fillteer by custom</h1>
+
+         <ol >
+            <li ng-repeat="s in studentlist">{{s|myFilter}}</li>
+         </ol>
+    
+        
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp",[])
+        app.controller('myController',function($scope){
+            $scope.today=new Date();
+            $scope.studentlist = [ 'Duong','Thanh', 'Nhi','Dat'];
+
+        })
+
+        app.filter("myFilter",function(){
+            return function(x) {
+
+
+                var  i,  c,  txt  ="";
+                 for  (i  =  0;  i  <  x.length;  i++) 
+                 {   c=x[i]
+                    if  (i  %  2  ==  0) 
+                    {
+                      c  =  c.toUpperCase();
+                    }
+                    txt  +=  c;
+                 }
+                 return txt;
+                              }
+           } )
+    </script>
+
+</body>
+</html>

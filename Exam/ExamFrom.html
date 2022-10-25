@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Exam.css">
+    
+</head>
+<body>
+    <header>
+        <img src="image/Logo.PNG" alt="logo">
+    </header>
+
+    <nav>
+        <a href="ExamHome.html">Homepage</a>
+        <a href="Utilities.html">Utilities</a>
+        <a href="Share.html">Share</a>
+        <a href="Knowledge.html">Knowledge</a>
+        <a href="ExamFrom.html">Register</a>
+        <a href="Login.html">Login</a>
+        <a href="AboutUs.html">About Us</a>
+    </nav>
+    <section>
+      <form onsubmit="detail()" >
+
+  <table>
+
+            <tr>
+                <th style="text-align: right;" >Frist Name:</th>
+                <th style="text-align: left;"><input type="text" id="fname"><span>*</span>
+                </th>
+            </tr>
+
+            <tr>
+                <th style="text-align: right;">Last Name:</th>
+                <th style="text-align: left;"><input type="text" id="lname"><span>*</span></th>
+            </tr>
+
+
+            <tr>
+                <th style="text-align: right;">Country:</th>
+                <th style="text-align: left;"><select name="country" id="country">
+
+                    <option value="VietNam">VietNam</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                </select></th>
+            </tr>
+
+            <tr>
+                <th style="text-align: right;">Gender:</th>
+                <th style="text-align: left;">
+                    <input type="radio" name="gender" class="gender" value="Male">Male
+                    <input type="radio" name="gender" class="gender" value="FeMale">FeMale
+
+                </th>
+            </tr>
+
+            <tr>
+                <th style="text-align: right;">Email:</th>
+                <th style="text-align: left;"><input type="email" id="email"><span>*</span>
+                </th>
+            </tr>
+
+            <tr>
+                <th style="text-align: right;">Telephone:</th>
+                <th style="text-align: left;"><input minlength="8" maxlength="12" type="text" id="phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')"><span>*</span>
+                </th>
+            </tr>
+
+            <tr>
+                <th colspan="2">
+                    <button type="submit">Register</button>
+                    <input type="reset">
+                 </th>
+                
+            </tr>
+           </table>
+      </form>
+ 
+
+
+
+
+    </section>
+</body>
+<script src="Exam.js"></script>
+</html>

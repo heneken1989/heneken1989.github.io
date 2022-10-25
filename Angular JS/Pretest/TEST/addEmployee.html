@@ -1,0 +1,32 @@
+<div ng-controller="addController">
+    ADD NEW Employee
+<form name="myForm" ng-submit="add()">
+    ID: <br>
+    <input type="text" name="myID" ng-model="myID" required> <br>
+    <span class='error' ng-show="myForm.myID.$error.required ">ID is required <br> ID has format Exx,x:digit</span>
+    <br>
+    Name: 
+    <br>
+    <input type="text" name="myName" ng-model="myName" required> <br>
+    <span class='error' ng-show="myForm.myName.$error.required ">Name is required</span>
+    <br> <br>
+    Salary <br>
+    <br>
+    <input type="text" name="mySalary" ng-model="mySalary" required> <br>
+    <span class='error' ng-show="myForm.mySalary.$error.required">Salary is required <br> Invalid Salary(must be >=100)
+    </span>
+      <br>
+
+    Department
+    <select name="myDep"  ng-model="myDep" required>
+        <option value="ACC">ACC</option>
+        <option value="SAL">SAL</option>
+        <option value="IT">IT</option>
+    </select>
+    <span class='error' ng-show="myForm.myDep.$error.required">Department is required</span>
+    <br>
+    <button type="submit" ng-disabled="myForm.$invalid || myForm.$pending">add</button> 
+
+                                     
+</form>
+</div>

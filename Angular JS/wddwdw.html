@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>AngularJS Validation</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+      <style>
+         .error-msg {
+         font-size: 90%;
+         font-style: italic;
+         color: red;
+         }
+      </style>
+   </head>
+   <body>
+      <div ng-app="myApp" ng-controller="myCtrl">
+         <h3>Validation Directive: ng-minlength, ng-maxlength</h3>
+         <p>Enter Password:</p>
+
+         <form name="myForm" action="" ng-submit="checkOnSubmit($event)">
+            Password <br/>
+            <input type="password"
+               name="myPassword" ng-model="password"
+               ng-minlength= "5" ng-maxlength= "10" ng-required="true"/>
+               
+            <span ng-show="myForm.myPassword.$invalid" class="error-msg">
+                 Password must be minimum 5 and maximum 10 characters
+            </span>
+            <br/>
+            <button type="submit" >Submit</button>
+         </form>
+      </div>
+      <script>
+        var app = angular.module("myApp", []);
+
+app.controller("myCtrl", function($scope) {
+
+    $scope.checkOnSubmit = function(event) {
+        if ($scope.myForm.$invalid) {
+            alert("Something invalid!");
+
+          
+            // Cancel submit
+            event.preventDefault();
+            return false;
+        }
+        alert("All valid => Submit now!");
+        return true;
+    }
+
+});
+      </script>
+   </body>
+</html>

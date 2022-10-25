@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .view{
+            width: 400px;
+            height: 400px;
+            background-color: antiquewhite;
+            margin: auto;
+            color: brown;
+        }
+        table{
+            margin: auto;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    
+    <a  href="#/!">Home</a>
+    <a  href="#!Form">From</a>
+    <a  href="#!List">List</a>
+
+    <div ng-view class="view"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+
+    <script>
+        var  app = angular.module("myApp", ["ngRoute"])
+        app.config(function($routeProvider) {
+                $routeProvider
+               .when("/",{
+                templateUrl  :"home.html"
+                })
+                .when("/Form",  { templateUrl  : "Form.html"
+                })
+                .when("/List",  { templateUrl  :  "List.html"
+                });
+        });
+
+        app.run(function($rootScope,$http){
+           $http.get('List.json').then(function(response){
+           $rootScope.list= response.data.StudentList;
+        })
+        });
+
+        app.controller("ListController",function($scope){
+            $scope.myshow=false
+            $scope.showhide=function(){
+                $scope.myshow=!$scope.myshow
+            }
+
+            $scope.saveAdd=function(){
+                var newstudent={"Name":$scope.myName,"age":$scope.myAge,"address":$scope.myAddress}
+                console.log(newstudent)
+                $scope.list.push(newstudent)
+                alert("add sucessfully")
+            }
+
+        })
+
+        app.controller("FormController",function($scope){
+            
+        })
+
+
+  
+
+   
+
+
+
+
+    </script>
+</body>
+</html>

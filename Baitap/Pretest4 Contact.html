@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretest4</title>
+    <link rel="stylesheet" href="../CSS/Pretest4.css">
+    <style>
+        .required::after{
+            content: "*";
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div2">
+
+    <header>
+       <img style="float:left; width: 100px; height:100px ;" src="../image/Pretest4/logo.jpg" alt="Logo">
+       <div class="div1">Amazaing Bridges</div>
+    </header>
+       <nav>
+        <a href="Pretest4 home.html">HOME</a>
+        <a href="Pretest4 World Briges.html">WORLD BRIGES</a>
+        <a href="Pretest4 Top Longest.html">TOP LONGEST</a>
+        <a href="Pretest4 Top highest.html">TOP HIGHEST</a>
+        <a href="Pretest4 Contact.html">CONTACT</a>
+       </nav>
+
+       <section>
+        <h1>Contact Us</h1>
+        <form  onsubmit="detail()">
+        <fieldset>
+            <legend>Yours detail</legend>
+           Name <input required type="text" id="uname" minlength="3" pattern="([a-zA-Z\s ])([^0-9]+)" title="Plz input atleast 3 character include letter and space"> <label class="required" ></label> <br>
+           Email <input type="email" id="email"> <label class="required"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your review</legend>
+            How did you hear about us<select name="hear" id="hear">
+                <option value="Google">Google</option>
+                <option value="Friend">Friend</option>
+                <option value="Advert">Advert</option>
+                <option value="Other">Other</option>
+            </select> <br>
+            Would you visit again? <input type="radio" name="visit" class="visit" value="Yes">Yes
+            <input type="radio" name="visit" class="visit" value="No">No
+            <input type="radio" name="visit" class="visit" value="Maybe">Maybe <br>
+
+            Comment: <br>
+             <textarea name="comment" id="comment" cols="30" rows="10"></textarea> <br>
+
+            <input type="checkbox">Sign me up for Email updates <br>
+
+
+            <input style="background-color:blue ; color: white;" type="submit"> <input style="background-color:blue ; color: white;" type="reset" value="Reset">
+
+        </fieldset>
+       </section>
+
+    </form>
+       
+       <footer>
+        Coppyright &copy; by ABC team- April,2020
+       </footer>
+    </div>
+   <script src="../JS/Pretest4.JS"></script>   
+</body>
+</html>

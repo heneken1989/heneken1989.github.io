@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+     #info{
+
+  
+        
+        color: brown;
+        width: 200px;
+        height: 200px;
+        border: solid;
+     }
+    </style>
+</head>
+
+<body>
+     <input type="text" id="search" placeholder="nhap ten sinh vien can tim kiem">
+     <input type="submit" id="submit" onclick="searchinfo()">
+
+     <div id="info"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"> </script>
+    <script>
+   // khai bao 1 doi tuong kieu JSON 
+    var student = {"name": "Khoa" , "age": 10, "adress" : "SG"};
+    // xuat thong tin
+
+    // document.write("<br> name: "+ student.name + "------Age:" + student.age+ "-----Adress:" + student.adress);
+
+
+    //khai bao 1 mang gom nhieu phan tu  moi ohan tu la 1 doi tuong json
+    var list = [
+        {"name": "Khoa" , "age": 10, "adress" : "SG"},
+        {"name": "Cao Son" , "age": 10, "adress" : "Binh Duong"} ,  
+        {"name": "Quan" , "age": 28, "adress" : "Tan Binh"},
+        {"name": "Thinh" , "age": 26, "adress" : "BInh Chanh"}
+        ]
+
+    // xuat thong tin  cac sinh vien ra man hinhh 
+    // tao 1 o input de nhap ten sv vao va tim kiem trong ds xem co sinh vien do khong
+    //neu co thi xuat sv do ra the div
+    //neu khong co thi xuat ra thong bao : khong co sv can tim
+          function searchinfo()
+          {
+
+
+         var value = $("#search").val();
+         var s = "";
+         var count=0;
+
+         for (var i in list )
+         {
+              if(list[i].name.toLowerCase().search(value.toLowerCase()) !=-1)
+              {
+                count++
+                s += "<br>" + (parseInt(i)+1)+ ".name:" + list[i].name + "Age:" + list[i].age;
+              }
+
+         }
+         if( count==0)
+         {
+            s = "khong co"
+           
+         }
+        // xuat thong tin ra 
+        $("#info").html(s);
+
+        }
+     
+        // chuyen 1 chuoi thanh mot doi tuong Json
+        var str ='{"name": "Khoa" , "age": 10, "adress" : "SG"}';
+        var obj = JSON.parse(str);
+        document.write("<br> Name" + obj.name);
+        document.write("<br> str is"+ str) ;
+        document.write("<br> obj is"+ obj);
+    
+        // chuyen doi tuong JSON sang chuoi
+        
+        document.write("<br> str is" +str_new);
+  
+
+
+    </script>
+</body>
+</html>

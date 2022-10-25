@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="showInfo()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="username"></td>
+            </tr>
+            <tr>
+                <td> Password:</td>
+                <td><input type="password" class="password"></td>
+            </tr>
+            <tr>
+                <td>  Confirm Password:</td>
+                <td><input type="password" class="password"></td>
+            </tr>
+            <tr>
+                <td>  Email:</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+
+            <tr>
+                <td>birthday</td>
+                <td ><input type="date" id="birthday"></td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" name="gender" class="gender" value="male">Male
+                    <input type="radio" name="gender" class="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Hoodies</td>
+                <td>
+                    <input type="checkbox" name="hob" class="hob" value="sport">Sport
+                    <input type="checkbox" name="hob" class="hob" value="music">Music
+                    <input type="checkbox" name="hob" class="hob" value="game">Game
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"> </script>
+    <script>
+        function showInfo(){
+            var name = $("#username").val();
+           
+            var pass = $(".password")[0].value
+
+            var repass = $(".password")[1].value
+
+            var email = $("#email").val()
+
+            var birthday = $("#birthday").val()
+
+            var gender = $(".gender:checked").val()
+
+            var hob = $(".hob:checked")
+            // tao 1 aaray rong de push cac phan tu da chon vao 
+            var hobArr = [];
+            if(hob.length>0){
+                hob.each(function(){
+                    hobArr.push($(this).val());
+                })
+            }
+
+             // chuyen chuoi tanh dang date
+             var birth = new Date(birthday);
+             var today = new Date()
+             var age =  Math.floor((today-birth)/(24*60*60*1000*365.2));
+        
+
+        
+
+            alert("name: "+name + "\n PAss :" + pass + "\nEmail: " + email + "\nbirthday: " + birthday + "\ngender: " + gender +"\nhob: " + hobArr + "\n age: " + age );
+        }
+    </script>
+</body>
+</html>

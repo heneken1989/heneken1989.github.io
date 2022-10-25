@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+
+<head>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="DemoCtrl">
+  <h3>ng-show/hide</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th id="th-name">Question</th>
+        <th id="th-age">ID</th>
+      </tr>
+    </thead>
+    <tr ng-repeat="data in Value">
+      <td>
+        <span ng-show="edit != true">{{data.question}}</span>
+        <input ng-show="edit" type="text" ng-model="selected.question" class="form-control" placeholder="question">
+      </td>
+      <td>
+        <span ng-show="edit != true">{{data.id}}</span>
+        <input ng-show="edit" type="text" ng-model="selected.id" class="form-control" placeholder="ID">
+      </td>
+      <td>
+        <button ng-show="edit != true && editing != true" id="table-edit" ng-click="edit = true; editContact(data)"><i class="fa fa-fw fa-pencil"></i></button>
+      </td>
+      <td><button ng-click="edit = false; saveContact($index)"><i class="fa fa-fw fa-floppy-o"></i>aa</button></td>
+    </tr>
+  </table>
+  <script>
+angular.module('demo', ['ui.bootstrap']);
+
+angular.module('demo').controller('DemoCtrl', DemoCtrl);
+
+DemoCtrl.$inject = ['$scope', '$timeout'];
+
+function DemoCtrl($scope, $timeout) {
+
+$scope.Value = [{
+      id: 1,
+      question: "Ben"
+    }, {
+      id: 2,
+      question: "Sally"
+    }, {
+      id: 3,
+      question: "John"
+    }];
+    $scope.selected = {};
+
+  $scope.editContact = function(data) {
+    $scope.editing = true;
+    $scope.selected = angular.copy(data);
+  };
+
+  $scope.saveContact = function(id) {
+    $scope.editing = false;
+    $scope.Value[id] = angular.copy($scope.selected);
+  };
+  }
+  </script>
+</body>
+
+</html>

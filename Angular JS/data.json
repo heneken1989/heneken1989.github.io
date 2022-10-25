@@ -1,0 +1,9 @@
+{
+    "studentList":[
+        {"name":"Hieu","age":31 , "address" : "Quan Binh Thanh"},
+        {"name":"Nhi","age":19 , "address" : "Quan Hoc Mon"},
+        {"name":"Minh","age":24 , "address" : "Quan Tan Phu"},
+        {"name":"Dat","age":29 , "address" : "Quan Tan Binh"},
+        {"name":"Phat","age":20 , "address" : "Quan 12"}
+    ]
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/Pretest.css">
+    <style>
+        table{
+          margin-left: 500px;
+          border: solid black;
+        }
+      input:required{
+        border-color: brown;
+        border-width: 3px;
+      }
+
+    </style>
+</head>
+<body>
+  <header>Online Shopee</header>
+  <nav>
+      <a href="Pretest Home.html">Home</a>
+      <a href="Pretest Product.html">PRODUCTS</a>
+      <a href="Pretest Shops.html">SHOPS</a>
+      <a href="Pretest.html">REGISTER</a>
+      <a href="Pretest Signin.html">SIGIN</a>
+  </nav>
+
+    <form onsubmit="Memberinfo()" >
+        <table >
+              <tr>
+                <th colspan="2" style="color:blue ; background-color: aqua;">MEMBER INFOMATIONS</th>
+                <!-- <th></th> -->
+              </tr>
+
+              <tr>
+                <td>Fullname</td>
+                <td><input type="text" id="username" required></td>
+              </tr>
+
+              <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" class="gender" value="male">Male
+                    <input type="radio" name="gender" class="gender" value="female">FeMale
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>Hobbies</td>
+                <td>
+                    <input type="checkbox" name="hob" class="hob" value="shopping">shopping
+                    <input type="checkbox" name="hob" class="hob" value="Eating out">Eating out
+                    <input type="checkbox" name="hob" class="hob" value="sporting">Sporting
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>Date of Birth</td>
+                <td> <input type="date" id="birthday" required>
+                  <span id="span">aa</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Address</td>
+                <td><input type="text" id="address" required></td>
+              </tr>
+
+              <tr>
+                <td>Email</td>
+                <td> <input type="email" id="email" required></td>
+              </tr>
+
+
+              <tr>
+                <td>Phone Numbers</td>
+                <td><input type="text" id="phone" required oninput="this.value = this.value.replace(/[^0-9.]/g, '')"></td>
+              </tr>
+
+              <tr>
+                <td>City</td>
+                <td>
+                    <select name="city" id="city"  >
+                      <option value="" >--Select--</option>
+                        <option value="Saigon">Saigon</option>
+                        <option value="Hue">Hue</option>
+                        <option value="HaNoi">HaNoi</option>
+                        <option value="DaNang">DaNang</option>
+
+                    </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Comment</td>
+                <td><textarea name="comment" id="comment" cols="30" rows="10"></textarea></td>
+              </tr>
+
+              <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit">
+                  <input type="reset">
+                </td>
+                <!-- <td></td> -->
+              </tr>
+
+        </table>
+
+        <footer>
+          Shoppe  &copy; coppyright 2017.All rights reverved
+      </footer>
+    </form>
+    <script src="../JS/Pretest.js"></script>
+</body>
+</html>

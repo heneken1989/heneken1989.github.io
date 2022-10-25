@@ -1,0 +1,36 @@
+
+<div ng-controller="ListController">
+    <form name="myForm" ng-submit="remove()">
+        <h1>Employee List</h1>
+        Enter Employee Name<input type="text" ng-model="searchText"> <br>
+        Sort by: <span name="short" ng-model="shortcolum">
+            <input type="radio" name="sort" value="Name" ng-model="shortcolum">Name
+            <input type="radio" name="sort" value="Department" ng-model="shortcolum">Department
+        </span>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>action</th>
+ 
+        </tr>
+
+        <tr ng-repeat="s in list">
+            <td >{{s.ID}}
+            </td>
+            <td >{{s.Name}}
+            </td>
+            <td>{{s.Salary}}
+            </td>
+            <td>{{s.Department}}</td>
+            <td><button ng-click="remove($index)" value="remove">Delete</button>
+            </td>
+        
+
+
+        </tr>
+    </table>
+</form>
+</div>

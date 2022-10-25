@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getname()">click here to get name </button> <br>
+
+    <button onclick="countSession()">click here to count sessionStorage</button>  <br>
+    <div id="session"></div>
+
+    <button onclick="countLocal()">click here to count LocalStorage</button>  <br>
+    <div id="local"></div>
+
+
+
+
+    <script>
+        function getname(){
+            //thiet lap 1 key ten nname, va gan gia tri cho key do
+            sessionStorage.setItem("name","Linh Dan");
+
+            sessionStorage.age = 18;
+
+            // lay gia tri key name
+         var value=   sessionStorage.getItem("name");
+
+         var myage = sessionStorage.age
+         alert("your name is "+ value+ "age: " + myage);
+
+        }
+
+   
+
+
+      
+        function countSession()
+        {
+
+                       // thiet lap 1 key ten la counter
+                   if(!sessionStorage.counter)
+                   {
+                    sessionStorage.counter=1
+                   }
+                   else{
+                    sessionStorage.counter++
+                   }
+        
+                       document.getElementById("session").innerHTML = sessionStorage.counter;
+                      
+
+        }
+
+        function countLocal()
+        {
+
+            if(!localStorage.counter)
+            {
+                localStorage.counter=1
+            }
+            else{
+                localStorage.counter++
+            }
+            // thiet lap 1 key ten la Local
+           
+            // get
+            document.getElementById("local").innerHTML =localStorage.counter
+            
+
+        }
+    </script>
+</body>
+</html>

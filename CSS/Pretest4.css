@@ -1,0 +1,31 @@
+header{
+    height: 100px;
+}
+.div1{
+    height: 200px;
+    font-size: 50px;
+    line-height: 130px;
+    color: rgb(101, 94, 97);
+    text-shadow: black 2px 2px 2px;
+}
+nav{
+    margin-top: 20px;
+    height: 50px;
+    font-weight: bold;
+    display:flow-root;
+   
+ 
+}
+a{
+padding: 20px;
+text-decoration: none;
+}
+footer{
+    text-align: center;
+}
+
+.div2{
+    border: solid wheat;
+    padding-left: 40px;
+    padding-top: 20px;
+}

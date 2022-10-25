@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+        }
+div{
+    text-align:left;
+}
+table{
+    
+    margin-top: 50px;
+    border:red;
+}
+nav{
+    display:flex;
+    justify-content: space-around;
+}
+
+    </style>
+</head>
+<body ng-app="myApp" >
+<nav>
+<a  href="#/!">Home</a>
+<a  href="#!List">Employee List</a>
+<a  href="#!Add">Add new Employee</a>
+<a  href="#!About">About us</a>
+</nav>
+<div ng-view style="width: 100%; height:1000px ; background-color:white;"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+
+ <script>
+
+    var  app  =  angular.module("myApp", ["ngRoute"]); 
+    app.config(function($routeProvider)  {
+     $routeProvider
+     .when("/",{
+     templateUrl  :"home.html"
+      })
+
+     .when("/List",  { templateUrl  : "listEmployee.html"
+      })
+     .when("/Add",  { templateUrl  :  "addEmployee.html"
+      })
+    .when("/About",  { templateUrl  : "About.html"
+     });
+
+    });
+
+    app.run(function($rootScope,$http){
+        $http.get('Employee.json').then(function(response){
+            $rootScope.list=response.data.EmployeeList
+    })
+    })
+
+    app.controller("ListController", function($scope,$window){
+               
+                $scope.shortcolum='name';   // dinh nghia bien short
+                $scope.remove = function (index) {
+                //Find the record using Index from Array.
+                var name = $scope.list[index].Name;
+                if ($window.confirm("Do you want to delete: " + name)) {
+                    //Remove the item from Array using Index.
+                    $scope.list.splice(index, 1);
+                }
+                }
+                
+            })
+    app.controller("addController", function($scope){
+            $scope.add = function(){
+             var newfood={"ID": $scope.myID,"Name":$scope.myName ,"Salary":$scope.mySalary ,"Department":$scope.myDep}
+             $scope.list.push(newfood)
+             alert("add sucessfully")
+            }  
+            })
+</script>
+<footer>
+    Copyright &copy; by FPT Aptech
+</footer>
+</body>
+</html>

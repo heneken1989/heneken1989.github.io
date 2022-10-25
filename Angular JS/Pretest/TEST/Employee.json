@@ -1,0 +1,10 @@
+{
+    "EmployeeList":[
+        {"ID":"E01","Name":"Charles","Salary":1000,"Department":"ACC"},
+        {"ID":"E02","Name":"Anna","Salary":1200,"Department":"SAL"},
+        {"ID":"E03","Name":"Billy","Salary":800,"Department":"ACC"},
+        {"ID":"E04","Name":"Washington","Salary":900,"Department":"IT"}
+
+
+    ]
+}

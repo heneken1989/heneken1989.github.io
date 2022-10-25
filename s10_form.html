@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:required{
+            border: solid red;
+        }
+        input:required:valid,input:valid{
+            border: solid black;
+            color: rgb(0, 255, 81);
+        }
+        input:invalid{
+            color:brown
+        }
+    </style>
+</head>
+
+<body>
+    <form action="welcome.html" oninput="total.value=parseInt(product.value)*parseInt(qty.value)">   <!-- xuat ra bill -->
+        UserName: <input type="text" placeholder="Enter your name" autofocus required pattern="[a-z]{3,8}"><br>
+
+        Password: <input type="Password" placeholder="Enter your pw"><br>
+        Email: <input type="email" name="" id="">
+        Url: <input type="url">
+        number: <input type="number" min="0" max="22" step="5"><br>
+        Range: <input type="range" min="0" max="100" value="30">100 <br>
+        Date: <input type="date"> <br>
+        week: <input type="week"> <br>
+        month: <input type="month"> <br>
+        time: <input type="time"> <br>
+        <label for="name">name</label> <input type="text" id="name"> <br>
+        gender: <input type="radio" name="gender">male 
+                <input type="radio" name="gender">female <br>
+         hobbies: <input type="checkbox" name="hob" value="Sport">sport
+                  <input type="checkbox" name="hob" value="Music">Music
+                  <input type="checkbox" name="hob" value="Travel">Travel <br>
+
+        select:
+           <select multiple>
+                   <option  value="Cash">cash</option>
+                   <option value="Banking">Ibanking</option>
+                   <option value="momo">MoMo</option>
+
+           </select>
+           Comment: 
+           <textarea name="" id="" cols="30" rows="10"></textarea> <br>
+           <input type="file"> <br>
+           datalist:
+           <input type="text" list="mylist"> 
+           <datalist id="mylist">
+            <option value="Cash">cash</option>
+            <option value="Banking">Ibanking</option>
+            <option value="momo">MoMo</option>
+
+           </datalist> <br>
+           product: <select name="product" id="">
+                <option value="200">silver</option>
+                <option value="300">gold</option>
+                <option value="400">diamont</option>
+           </select>
+
+           quantity: <input type="number" min="1" max="10" value="1" name="qty"><br>
+           $ <output name="total"></output> <br>
+        <input type="Submit" >
+
+    </form>
+</body>
+</html>

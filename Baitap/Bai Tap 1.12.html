@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-spacing: 0px;
+            background-color: aqua;
+        }
+       
+  
+        
+    </style>
+</head>
+<body>
+    <form action="hello.html">
+        <table border="1">
+             <tr>
+                <th>Họ và tên</th>
+                <th><input type="text" ></th>
+             </tr>
+             <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text"></td>
+             </tr>
+
+             <tr>
+                <td>Điện thoại</td>
+                <td><input type="text"></td>
+             </tr>
+
+             <tr>
+                <td>Phái</td>
+                <td><input type="radio" name="gender">Nam
+                    <input type="radio" name="gender">Nữ
+                </td>
+             </tr>
+
+             <tr>
+                <td>Nghề nghiệp</td>
+                <td><input type="text" list="mylist">
+                    <datalist id="mylist">
+                        <option value="Bác Sĩ"></option>
+                        <option value="Kỹ sư"></option>
+                        <option value="Giáo viên"></option>
+                        <option value="Khác"></option>
+
+                    </datalist>
+                
+                
+                </td>
+             </tr>
+
+             <tr>
+                <td height="40px">Chọn sản phẩm tham gia</td>
+                <td><select multiple>
+                        <option selected value="Kem Đánh Răng">Kem Đánh Răng</option>
+                        <option value="Bột Giặt">Bột Giặt</option>
+                        <option value="Dầu Gội Đầu">Dầu Gội Đầu</option>
+                        <option value="Sữa tắm">Sữa tắm</option>
+                    </select>
+                </td>
+             </tr>
+
+             <tr>
+                <td>Số người dự đoán tham gia</td>
+                <td><input type="number" min="1" value="1"></td>
+             </tr>
+             <tr>
+                <td colspan="2"><input type="button" value="Đồng ý" ></td>
+                <!-- <td></td> -->
+             </tr>
+
+             <tr>
+                <td colspan="2" height="20px"></td>
+                <!-- <td></td> -->
+             </tr>
+        </table>
+
+
+
+
+
+
+
+    </form>
+    
+</body>
+</html>

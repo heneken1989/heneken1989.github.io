@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app = "myApp" ng-controller="myController">
+  
+
+       <input type="text" ng-model="member" >
+       <input type="text" ng-model="fee">
+   
+
+        <button ng-click="total = member*fee">total</button>  <br>
+        Count={{total}}
+
+        <button ng-click=" "></button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", [])
+        app.controller("myController",function($scope){
+            //khai bao bien name
+            $scope.member=[];
+            $scope.fee=[];
+            $scope.total=[]
+            // khai bao ham
+            function total2(){
+                
+            }
+
+
+                
+            
+        })
+
+    </script>
+</body>
+</html>

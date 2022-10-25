@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp" ng-controller="myController" >
+
+    <input type="checkbox" ng-model="myCheck"> check to hide
+     <ol ng-hide="myCheck">
+        <li ng-repeat="s in studentlist">{{s}}</li>
+     </ol>
+
+
+
+     <button ng-click="showOrhide()">click here to show/hide</button>
+
+     <ol ng-hide="myShow">
+        <li ng-repeat="s in studentlist">{{s}}</li>
+     </ol>
+
+
+     <div ng-include="'s3_ngInit.html'">
+
+     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp",[])
+        app.controller("myController",function($scope){
+                   //khai bao va khoi tao mot mang
+                   $scope.studentlist = [ 'Duong','Thanh', 'Nhi','Dat'];
+                   $scope.myShow=false
+
+                   $scope.showOrhide =function(){
+                    $scope.myShow =  !$scope.myShow;
+                   }
+
+
+        })
+    </script>
+</body>
+</html>

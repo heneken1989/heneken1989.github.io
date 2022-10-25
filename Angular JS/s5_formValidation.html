@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+        }
+        input.ng-dirty.ng-invalid{
+            color:red
+        }
+        input.ng-dirty.ng-valid{
+            color:rgb(17, 230, 17)
+        }
+        
+    </style>
+</head>
+<body ng-app="">
+    <form action="home.html" name="myForm">
+        name: <input type="text" name="myName" ng-model="myName" pattern="[a-z]{1,5}" required>
+        <span class='error' ng-show="myForm.myName.$error.required &&myForm.myName.$dirty">Name is required</span>
+        <span class='error' ng-show="myForm.myName.$error.pattern &&myForm.myName.$dirty">Name is 1 max 5</span> <br>
+
+        Email:<input type="email" name="myEmail" ng-model="myEmail" required>
+        <span class='error' ng-show="myForm.myEmail.$error.required &&myForm.myEmail.$dirty">Email is required</span>
+        <span class='error' ng-show="myForm.myEmail.$error.email &&myForm.myEmail.$dirty">Email not metch format</span> <br>
+
+        <input type="submit">
+    </form>
+             myForm.myName.$valid ={{myForm.myName.$valid}} <br>
+             myForm.myName.$error ={{myForm.myName.$error}}
+
+  
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</body>
+</html>

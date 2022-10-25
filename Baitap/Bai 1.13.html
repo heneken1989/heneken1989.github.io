@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        div{
+        
+           text-align: center;
+        }
+        .div1{
+            background-color: aquamarine;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+          
+        }
+      .aa{
+        text-decoration: underline;
+
+     }
+     fieldset{
+        border: solid red;
+        width:350px; height:55px;
+        
+
+     }
+    </style>
+</head>
+<body>
+    <h1>Đăng ký du lịch</h1>
+    <form action="Hello.html">
+        <table border="1">
+               <tr>
+                <th>Họ Và Tên</th>
+                <th><input type="text"></th>
+               </tr>
+
+               <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text"></td>
+               </tr>
+
+               <tr>
+                <td>Điện thoại</td>
+                <td><input type="text"></td>
+               </tr>
+
+               <tr>
+                <td>Khách Việt Nam</td>
+                <td><input type="checkbox" name="VietNam"></td>
+               </tr>
+
+               <tr>
+                <td>Chọn Tour</td>
+                <td><select name="" id="">
+
+                    <optgroup label="Miền Bắc">
+                        <option value="Ha noi-ha long-sapa">Ha noi-ha long-sapa</option>
+                        <option value="Ha noi-chua huong-ninh binh">Ha noi-chua huong-ninh binh</option>
+                        <option value="Ha Noi-Cac Ba-Tuan Chau">Ha Noi-Cac Ba-Tuan Chau</option>
+                    </optgroup>
+
+                    <optgroup label="Miền Trung">
+                        <option value="Hue-bach ma-da nang">Hue-bach ma-da nang</option>
+                        <option value="nha trang da lat">Nha trang da lat</option>
+                        <option value="Buon me thuoc gia lai kontum">Buon me thuoc gia lai kontum</option>
+                    </optgroup>
+                     
+                    <optgroup label="Mien Nam">
+                        <option value="TpHCM can tho ca mau">TpHCM can tho ca mau</option>
+                        <option value="TpHCM My Tho">TpHCM My Tho</option>
+                    </optgroup>
+                </select>
+                    
+
+
+
+                    </datalist>
+                
+                </td>
+               </tr>
+
+               <tr>
+                <td>Phương tiện</td>
+                <td></td>
+               </tr>
+
+               <tr>
+                <td colspan="2" > <fieldset >
+                    <legend style="color:bisque ;">Số lượng đoàn khách</legend> 
+                    <div> Nguoi Lon<input type="number" name="Nguoi lon" style="width:30px ;">
+                     Tre Em <input type="number" name="TreEm" style="width:30px ;">
+                    </div>
+                    </fieldset>
+                </td>
+                <!-- <td></td> -->
+               </tr>
+
+               <tr>
+                <td class="aa" style="vertical-align:midle ; height: 50px;" >Ghi chú thêm </td>
+                <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+               </tr>
+
+               <tr>
+                <td colspan="2"><div><input type="button" value="Đồng ý"></div></td>
+                <!-- <td></td> -->
+               </tr>
+        </table>
+    </form>
+</body>
+</html>

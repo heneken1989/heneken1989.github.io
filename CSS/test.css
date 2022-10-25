@@ -1,0 +1,12 @@
+.para1{
+    text-decoration: underline;
+    color: blue;
+}
+#para2{
+    color: brown;
+    text-decoration:overline
+}
+div::after{
+    content: 'after';
+    background-color: blueviolet;
+}

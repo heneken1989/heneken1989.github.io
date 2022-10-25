@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .changecolor{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">click here to cal event</button>
+    <button id="btn2">load content</button>
+    <div id="info2"></div>
+    <button id="btn3">click here to hide</button>
+    <button id="btn4">click here to hide</button>
+    <button id="btn5">click here to use get method</button>
+    <p>this is paragraph</p>
+    <div id="info5"></div>
+
+    <button id="btn6">post</button>
+
+    <button id="btn7">add class</button>
+    <button id="btn8">add class</button>
+    <button id="btn9">add class</button>
+    <div id="info7">this is devision</div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"> </script>
+    <script>
+           $("#btn1").on("click",{"msg": "Data on event"}, function(event){
+              alert("Rsp: "+ event.data.msg)
+           })
+
+           $("#btn2").click(function() {
+            $("#info2").load("welcome.html", function(){
+                alert("load successfulluy");
+            })
+           })
+
+            $("#btn3").click(function(){
+                $("p").toggle(500);
+            })
+            $("#btn4").click(function(){
+                $("p").hide(500);
+            })
+
+
+            $("#btn5").click(function() {
+            $.get("welcome.html", function(rsp){
+                $("#info5").html(rsp);
+            })
+           })
+
+           $("#btn6").click(function() {
+            $.post("demo.php",{"name" : "Hieu", "age": 31} ,function(rsp){
+                $("#info6").html(rsp);
+            })
+           })
+
+        $("#btn7").click(function(){
+            $("#info7").addClass("changecolor");
+
+        })
+        $("#btn8").click(function(){
+            $("#info7").removeClass("changecolor");
+
+        })
+        $("#btn9").click(function(){
+            $("#info7").toggleClass("changecolor");
+
+        })
+
+        
+
+    </script>
+</body>
+</html>

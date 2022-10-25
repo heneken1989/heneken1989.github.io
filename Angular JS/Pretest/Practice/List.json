@@ -1,0 +1,11 @@
+{
+    "StudentList":[ 
+        {"Name": "Hien", "age":33,"address":"Q7"},
+        {"Name": "Dung", "age":30,"address":"Q9"},
+        {"Name": "An", "age":22,"address":"Q8"},
+        {"Name": "Nguy", "age":19,"address":"Q6"},
+        {"Name": "Maria ozawa", "age":40,"address":"Q5"},
+        {"Name": "King", "age":31,"address":"Q4"}
+    ]
+
+}

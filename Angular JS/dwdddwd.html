@@ -1,0 +1,19 @@
+
+<body ng-controller="addController" >
+    <form  name="myForm" ng-submit="add()">
+     <div>     
+        Add Form <br>
+        <input type="text" name="myID" ng-model="myID" required id="ID" >
+        <span class='error' ng-show ="myForm.myID.$error.required">ID is required</span> <br> <br>
+
+        <input type="text" name="myName" ng-model="myName" required > 
+        <span class='error' ng-show="myForm.myName.$error.required "> Name is required</span> <br> <br>
+
+        <input type="text" name="myPrice" ng-model="myPrice" required > 
+        <span class='error' ng-show="myForm.myPrice.$error.required">Price is required</span> <br> <br>
+    
+        <button type="submit" ng-disabled="myForm.$invalid || myForm.$pending">add</button>
+        
+    </div>
+    </form>
+</body>

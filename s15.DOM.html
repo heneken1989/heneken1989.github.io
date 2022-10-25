@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #info{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showLocation()">
+        click here get location
+    </button>
+    <button onclick="goNext()">
+        click here to go next page
+    </button>
+    <form onsubmit="showInfo()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="username"></td>
+            </tr>
+            <tr>
+                <td> Password:</td>
+                <td><input type="password" class="password"></td>
+            </tr>
+            <tr>
+                <td>  Confirm Password:</td>
+                <td><input type="password" class="password"></td>
+            </tr>
+            <tr>
+                <td>  Email:</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" name="gender" class="gender" value="male">Male
+                    <input type="radio" name="gender" class="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Hoodies</td>
+                <td>
+                    <input type="checkbox" name="hob" class="hob" value="sport">Sport
+                    <input type="checkbox" name="hob" class="hob" value="music">Music
+                    <input type="checkbox" name="hob" class="hoodies" value="game">Game
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="info"></div>
+    <script src="JS/s15.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+<div ng-controller="FoodController">
+    <form name="myForm" ng-submit="remove()">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th><input type="text" ng-model="search">Name Search</th>
+            <th><select name="short" ng-model="shortcolum">
+                <option value="name">Name</option>
+                <option value="ID">ID</option>
+                <option value="Price">Price</option>
+            </select></th>
+ 
+        </tr>
+
+        <tr ng-repeat="s in list|filter:search:name|orderBy:shortcolum">
+            <!-- span ID,Name,Price chi show khi trong tinh trang Non-edit -->
+            <!-- input edit ID,Name,Price  chi show khi dang trong tinh trang edit -->
+            <td><span ng-show="edit != true">{{s.ID}}</span>
+                <input ng-show="edit" type="text" ng-model="selected.ID" class="form-control" placeholder="ID" name="myID" placeholder="ID">
+            </td>
+            <td><span ng-show="edit != true">{{s.Name}}</span> 
+                <input ng-show="edit" type="text" ng-model="selected.Name" class="form-control" placeholder="Name" name="myName">
+            </td>
+            <td><span ng-show="edit != true">{{s.Price}}</span>
+                <input ng-show="edit" type="text" ng-model="selected.Price" class="form-control" placeholder="Price" name="myPrice">
+            </td>
+            <!-- remove va edit show khi khong trong tinh trang non-edit -->
+            <!-- save va cancer chi show khi trong tinh trang edit -->
+            <td><button ng-show="!edit" ng-click="remove($index)" value="remove">REMOVE</button>
+                <button ng-show="!edit" ng-click="edit = true; editContact(data)">Edit</button>
+                <button ng-show="edit" ng-click="edit = false; saveContact($index)">Save</button>
+                <button ng-show="edit" ng-click="edit = false; cancerContact($index)">Cancer</button>
+            </td>
+        
+
+
+        </tr>
+    </table>
+</form>
+</div>

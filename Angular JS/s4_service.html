@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp"  ng-controller="myController">
+    myData:{{myData}} <br>
+    list:{{list}} <br>
+    Search : <input type="text" ng-model="mySearch">
+    Sort by: <select name="" id="" ng-model="myOrder">
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+        <option value="address">Address</option>
+    </select>
+
+
+    <table border="1">
+       <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+       </tr>
+
+        <tr ng-repeat="s in list|filter:mySearch|orderBy:myOrder">
+           <td>{{$index +1}}</td>
+           <td>{{s.name}}</td>
+           <td>{{s.age}}</td>
+           <td>{{s.address}}</td>
+       </tr>
+    </table>
+
+    url:{{currentURL}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp",[])
+        app.controller('myController',function($scope,$http,$location){
+
+            $http.get('home.html').then(function(response){
+                $scope.myData = response.data;
+            })
+            $http.get('data.json').then(function(response){
+                $scope.list = response.data.studentList
+            })
+            $scope.currentURL = $location.absUrl();
+        })
+
+    </script>
+</body>
+</html>

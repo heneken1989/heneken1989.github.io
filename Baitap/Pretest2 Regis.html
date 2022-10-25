@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        header{
+            font-size: 40px;
+            color: blue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table{
+            margin-top:70px ;
+            margin-left: 300px;
+            
+
+        }
+
+       label::after{
+        content:"*";
+        color: red;
+       }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        REGISTRATION FORM
+    </header>
+    <section>
+        <form onsubmit="Detail()" >
+        
+        <div><span style="color:blue ; font-weight: bold;">Notes:</span> <br>
+
+            1.Field with(<span style="color: red;" >*</span>) mark must be entered <br>
+            2.Login name have no space
+        </div>   
+
+        <table >
+              <tr>
+                <th style="text-align:right ;"> Login name <label></label></th>
+                <th style="text-align:left ;"> <input minlength="5" pattern="[^\s]+" title="space not allowed" type="text" id="uname" required></th>
+              </tr>
+
+              <tr>
+                <th style="text-align:right ;">Password <label></label></th>
+                <th style="text-align:left ;"> <input minlength="5" type="password" id="pass"></th>
+              </tr>
+
+              <tr>
+                <th style="text-align:right ;">Password Confirm<label></label>  </th>
+                <th style="text-align:left ;"><input minlength="5" type="password" id="repass"></th>
+              </tr>
+              
+
+              <tr>
+                <th style="text-align:right ;">Full name <label></label></th>
+                <th style="text-align:left ;"><input type="text" id="fullname"></th>
+              </tr>
+              
+
+              <tr>
+                <th style="text-align:right ;">Address <label for=""></label></th>
+                <th style="text-align:left ;"><input type="text" id="address"></th>
+              </tr>
+              
+
+              <tr>
+                <th style="text-align:right ;">Email <label for=""></label></th>
+                <th style="text-align:left ;"><input type="email" id="email"></th>
+              </tr>
+              <tr>
+                <th style="text-align:right ;">Sex&nbsp</th>
+                <th style="text-align:left ;"><input type="radio" class="gender" name="gender" value="Male">Male
+                <input type="radio" class="gender" name="gender" value="FeMale">FeMale</th>
+              </tr>
+              <tr>
+                <th style="text-align:right ;">Date of bitrh&nbsp</th>
+                <th style="text-align:left ;"><input type="date" id="birth"></th>
+              </tr>
+              <tr>
+                <th style="text-align:right ;">Country&nbsp</th>
+                <th style="text-align:left ;"><select name="country" id="country">
+                    <option value="Ho Chi Minh">Ho Chi Minh</option>
+                    <option value="Ha Noi">Ha Noi</option>
+                    <option value="Da Nang">Da Nang</option>
+                    <option value="Others">Others</option>
+                </select></th>
+              </tr>
+              <tr>
+                <th style="text-align:right ;">Phone number&nbsp</th>
+                <th style="text-align:left ;"><input type="text" id="phone" oninput="this.value = this.value.replace(/[^0-9.+-]/g, '')" ></th>
+              </tr>
+              <tr>
+                <th style="text-align:right ;">Hobies&nbsp</th>
+                <th style="text-align:left ;">
+                  <input type="checkbox" id="hob" value="Swimming">Swimming
+                  <input type="checkbox" id="hob" value="Dancing">Dancing
+                  <input type="checkbox" id="hob" value="Shopping">Shopping
+                </th>
+              </tr>
+
+              <tr>
+                <th style="text-align:right ;">Comment&nbsp</th>
+                <th style="text-align:left ;"><textarea name="comment" id="comment" cols="30" rows="10"></textarea></th>
+              </tr>
+
+              <tr>
+                <th colspan="2">
+                  <input type="submit">
+                  <input type="reset">
+                </th>
+              
+              </tr>
+
+              
+
+        </table>
+        
+    </form>
+    </section>
+
+    <script src="../JS/Pretest2.js"></script>
+</body>
+</html>

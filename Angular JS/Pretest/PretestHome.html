@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+        }
+div{
+    text-align: center;
+}
+table{
+    margin: 0 auto;
+    margin-top: 50px;
+    border:red;
+}
+    </style>
+</head>
+<body ng-app="myApp" >
+
+<a  href="#/!">Home</a>
+<a  href="#!PretestFood">Food</a>
+<a  href="#!Add">Add New Food </a>
+<a  href="#!contact US">About</a>
+<div ng-view style="width: 100%; height:1000px ; background-color:white;"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+
+ <script>
+
+    var  app  =  angular.module("myApp", ["ngRoute"]); 
+    app.config(function($routeProvider)  {
+     $routeProvider
+     .when("/",{
+     templateUrl  :"home.html"
+      })
+
+     .when("/PretestFood",  { templateUrl  : "PretestFood.html"
+      })
+     .when("/Add",  { templateUrl  :  "PretestAddnewfood.html"
+      })
+    .when("/contact US",  { templateUrl  : "contact.html"
+     });
+
+    });
+
+    app.run(function($rootScope,$http){
+        $http.get('Pretest.json').then(function(response){
+            $rootScope.list=response.data.menuList
+    })
+    })
+
+    app.controller("FoodController", function($scope,$window){
+               
+                $scope.shortcolum='name';   // dinh nghia bien short
+                $scope.remove = function (index) {
+                //Find the record using Index from Array.
+                var name = $scope.list[index].Name;
+                if ($window.confirm("Do you want to delete: " + name)) {
+                    //Remove the item from Array using Index.
+                    $scope.list.splice(index, 1);
+                }
+                }
+                
+
+
+                // edit 
+                var newf ={"ID": $scope.myID,"Name":$scope.myName ,"Price":$scope.myPrice}
+                $scope.selected = {};
+                $scope.editContact = function() {
+                     $scope.editing = true;
+                     $scope.selected=angular.copy(newf)
+                     alert("Input new value to upgrade food list")
+
+                
+                };
+                $scope.cancerContact = function(index) {
+                $scope.editing = false;}
+
+                   //save thong tin edited
+                $scope.saveContact = function(index) {
+                $scope.editing = false;
+                $scope.list[index] = angular.copy($scope.selected);
+            };
+            })
+    app.controller("addController", function($scope){
+            $scope.add = function(){
+             var newfood={"ID": $scope.myID,"Name":$scope.myName ,"Price":$scope.myPrice}
+             $scope.list.push(newfood)
+             alert("add sucessfully")
+            }  
+            })
+</script>
+</body>
+</html>

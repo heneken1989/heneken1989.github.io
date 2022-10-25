@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    Name:{{name}}
+    FirstName: {{firstname}}
+    <div ng-controller="myController1">
+        Name in controller1 :{{name}} <br>
+        Firstname in controller 1: {{firstname}}
+    </div>
+
+    <div ng-controller="myController2">
+        Name in controller2 :{{name}} <br>
+        Firstname in controller2: {{firstname}}
+    </div>
+
+
+    <div ng-controller="myController2">
+        <div ng-controller="myController1">
+            Name in nested :{{name}} <br>
+            Firstname in nested : {{firstname}}
+        </div>
+
+
+    </div>
+
+    <div ng-controller="myController1">
+        <div ng-controller="myController2">
+            Name in nested :{{name}} <br>
+            Firstname in nested : {{firstname}}
+        </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+     <script>
+        var app=angular.module("myApp",[]);
+        app.run(function($rootScope){
+            $rootScope.name='Hieu';
+        })
+        app.controller("myController1",function($scope){
+            $scope.name="dan";
+        })
+        app.controller("myController2",function($scope){
+            $scope.firstname="Tran";
+        })
+     </script>
+    
+</body>
+</html>

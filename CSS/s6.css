@@ -1,0 +1,72 @@
+p{
+    font-size: 30px;
+    font-family:Arial ;
+    color: blue;
+    /* text-indent:30px ;      thut le */
+    text-align:center ;
+    font-style: italic;
+    font-weight:bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-shadow:3px 3px 3px brown;    /* đổ bóng */
+    word-spacing: 30px;
+}
+span{
+    color: brown;
+}
+.indent{
+    text-indent: 30px;
+
+}
+.pad1{
+    border: solid;
+    padding: 20px;
+}
+.pad2{
+    border: solid;
+    padding: 20px 40px;   /* top bottom: 20px , right left :40px */
+   
+}
+.pad3{
+    border: solid;
+    padding: 20px 40px 60px; /* top 20px , right left :40px, bottom 60px */
+}
+.pad4{
+    border: solid;
+    padding: 20px 40px 60px 80px; /* top 20px , left :40px, bottom 60px right 80px*/
+}
+.pad5{
+
+    border: solid;
+    padding-top: 20px;
+    padding-right:20px ;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.mar1{
+    border: solid;
+    margin: 40px;
+    padding: 20px;
+}
+.bor1{
+    border-style:dashed dotted double solid;
+}
+.bor2{
+     border-style: solid;
+    border-color:red;
+}
+.bor3{
+    border-style: solid;
+    border-width:medium thick thin 5px;
+}
+.bor4{
+    border:dashed blue thick;
+}
+.vertical{
+    border: solid;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;   /* canh giua */
+
+}
